@@ -43,6 +43,7 @@ next.onclick = function () {
 for ( let i = 0; i < dots.length; i++) {
     dots[i].onclick = function () {
         hideSlide();
+        count = i;
         slides[i].classList.add('slider__item_active'); 
         dots[i].classList.add('slider__dot_active');
     }
