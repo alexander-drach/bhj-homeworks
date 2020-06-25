@@ -6,13 +6,15 @@ let dots = document.querySelectorAll('.slider__dot');
 let count = 0;
 dots[count].classList.add('slider__dot_active');
 
-function hideSlide () {
+function hideSlide () {/*
     for ( let i = 0; i < slides.length; i++) {
         slides[i].classList.remove('slider__item_active');
     }
     for ( let i = 0; i < slides.length; i++) {
         dots[i].classList.remove('slider__dot_active');
-    }
+    }*/
+    slides[count].classList.remove('slider__item_active');
+    dots[count].classList.remove('slider__dot_active');
 }
 
 function showSlide () {
@@ -44,7 +46,6 @@ for ( let i = 0; i < dots.length; i++) {
     dots[i].onclick = function () {
         hideSlide();
         count = i;
-        slides[i].classList.add('slider__item_active'); 
-        dots[i].classList.add('slider__dot_active');
+        showSlide();
     }
 }
