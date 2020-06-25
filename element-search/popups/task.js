@@ -2,10 +2,10 @@
     'use strict';
 
     let close = document.querySelectorAll('.modal__close');
-    let modal_main = document.querySelector('#modal_main');
-    let modal_success = document.querySelector('#modal_success');
+    let modal_main = document.getElementById('modal_main');
+    let modal_success = document.getElementById('modal_success');
     let modal = document.querySelectorAll('.modal');
-    let btn_danger = document.querySelector('.btn_danger');
+    let [btn_danger] = document.getElementsByClassName('btn_danger');
 
     modal_main.classList.add('modal_active');
 

@@ -10,9 +10,6 @@ function hideSlide () {
     for ( let i = 0; i < slides.length; i++) {
         slides[i].classList.remove('slider__item_active');
     }
-}
-
-function hideDot () {
     for ( let i = 0; i < slides.length; i++) {
         dots[i].classList.remove('slider__dot_active');
     }
@@ -25,7 +22,6 @@ function showSlide () {
 
 prew.onclick = function () {
     hideSlide();
-    hideDot();
     count--;  
     if ( count < 0 ) {
        count = slides.length - 1;
@@ -36,9 +32,8 @@ prew.onclick = function () {
 
 next.onclick = function () {
     hideSlide();
-    hideDot();
     count++;  
-    if ( count > slides.length) {
+    if ( count > slides.length - 1) {
        count = 0;
     }
     
@@ -48,7 +43,6 @@ next.onclick = function () {
 for ( let i = 0; i < dots.length; i++) {
     dots[i].onclick = function () {
         hideSlide();
-        hideDot();
         slides[i].classList.add('slider__item_active'); 
         dots[i].classList.add('slider__dot_active');
     }
