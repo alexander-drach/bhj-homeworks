@@ -9,15 +9,6 @@ const addTask = (e) => {
 
     if (e.key === 'Enter') {
         if (input.value) {
-           /* let taskItem = document.createElement('div');
-            taskItem.classList.add('task');
-            taskItem.innerHTML = `            
-            <div class="task__title">
-                ${input.value}
-                </div>
-                <a href="#" class="task__remove">&times;</a>`;
-            taskList.appendChild(taskItem);
-            */
             taskList.insertAdjacentHTML('beforeEnd', 
             `<div class="task">
                 <div class="task__title">
@@ -26,7 +17,7 @@ const addTask = (e) => {
                 <a href="#" class="task__remove">&times;</a>
             </div>`            
             );
-            input.value = ';'
+            input.value = '';
 
             const closes = Array.from(document.getElementsByClassName('task__remove'));
 
