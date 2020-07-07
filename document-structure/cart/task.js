@@ -6,6 +6,9 @@ const [basket] = document.getElementsByClassName('cart__products');
 
 const minusQuantity = item => {
     item.closest('.product__quantity-controls').querySelector('.product__quantity-value').textContent--;
+    if ( item.closest('.product__quantity-controls').querySelector('.product__quantity-value').textContent < 0 ) {
+        item.closest('.product__quantity-controls').querySelector('.product__quantity-value').textContent = 0;
+    }
 }
 
 const plusQuantity = item => {
@@ -49,9 +52,6 @@ btnAddProduct.forEach( item => {
                     <div class="cart__product-count">${cardQuantity}</div>
                 </div>`);
             }
-
-        } else {
-            alert('кличество добавляемого товара должно быть больше нуля');
         }
         
     })
